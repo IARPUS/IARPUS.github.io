@@ -2824,68 +2824,381 @@ input[type="button"].small,
 	padding-top: 0;
 }
 
-/* Header */
-/* Introduction Section Styles */
-#intro-section {
-	margin: 2em auto;
-	max-width: 800px;
-	text-align: center;
-	/* Center all text if you prefer */
+/* ==========================================================================
+   Compact two-column portfolio layout (overrides the Directive template)
+   ========================================================================== */
+
+html,
+body {
+	background: #eaf4ee;
 }
 
-#intro-section h2 {
-	font-size: 2em;
-	margin-bottom: 0.5em;
-	font-weight: 700;
-	text-transform: uppercase;
-	color: #333;
+body {
+	background: linear-gradient(160deg, #f3faf6 0%, #e6f4ec 45%, #d8ecdf 100%);
+	background-attachment: fixed;
+	min-height: 100vh;
 }
 
-#intro-section .intro {
-	font-size: 1.1em;
+.page {
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: 320px minmax(0, 1fr);
+	gap: 1.75em;
+	align-items: start;
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 2.25em 1.5em 3em;
+	font-size: 16px;
 	line-height: 1.6;
-	color: #555;
+	color: #46514a;
 }
 
-/* Technologies & Languages Section Styles */
-#tech-section {
-	margin: 3em auto;
-	max-width: 800px;
+.page *,
+.page *:before,
+.page *:after {
+	box-sizing: border-box;
 }
 
-.face-icon {
-	color: #4eb980;
-	/* Set icon color */
-	display: block;
-	/* Make the icon a block element */
-	margin: 0 auto 1em auto;
-	/* Center the icon and add bottom margin */
+/* Shared card */
+.card {
+	background: #ffffff;
+	border: 1px solid rgba(78, 185, 128, 0.14);
+	border-radius: 16px;
+	box-shadow: 0 6px 22px rgba(40, 86, 61, 0.07);
 }
 
-#tech-section h2 {
-	font-size: 1.75em;
-	margin-bottom: 1em;
-	font-weight: 700;
+/* --- Sidebar --- */
+.sidebar {
+	position: sticky;
+	top: 2.25em;
+}
+
+.sidebar-card {
+	padding: 1.9em 1.6em;
 	text-align: center;
-	color: #333;
+}
+
+.avatar {
+	display: block;
+	width: 116px;
+	height: 116px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin: 0 auto 0.9em;
+	border: 3px solid #fff;
+	box-shadow: 0 0 0 3px rgba(78, 185, 128, 0.35), 0 6px 16px rgba(40, 86, 61, 0.18);
+}
+
+.name {
+	font-size: 1.6em;
+	font-weight: 700;
+	color: #2f3a33;
+	line-height: 1.2;
+	margin: 0 0 0.15em;
+}
+
+.role {
+	color: #4eb980;
+	font-weight: 600;
+	font-size: 0.95em;
+	margin: 0 0 1.1em;
+}
+
+.social {
+	display: flex;
+	justify-content: center;
+	gap: 0.6em;
+	margin: 0 0 1.2em;
+	padding: 0;
+	list-style: none;
+}
+
+.social li {
+	padding: 0;
+}
+
+.social a.icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5em;
+	height: 2.5em;
+	border-radius: 50%;
+	background: #f1f8f3;
+	color: #4eb980;
+	border-bottom: none;
+	transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.social a.icon:before {
+	font-size: 1.05em;
+}
+
+.social a.icon:hover {
+	background: #4eb980;
+	color: #fff;
+	transform: translateY(-2px);
+}
+
+.resume-btn {
+	display: block;
+	width: 100%;
+	padding: 0.7em 1em;
+	border-radius: 10px;
+	background: #4eb980;
+	color: #fff;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	border-bottom: none;
+	box-shadow: 0 4px 12px rgba(78, 185, 128, 0.3);
+	transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resume-btn:hover {
+	background: #3da06d;
+	transform: translateY(-1px);
+	box-shadow: 0 6px 16px rgba(78, 185, 128, 0.4);
+}
+
+.side-block {
+	margin-top: 1.6em;
+	text-align: left;
+}
+
+.side-block h2 {
+	font-size: 0.75em;
+	font-weight: 700;
+	letter-spacing: 0.14em;
 	text-transform: uppercase;
-	/* Optional underline/bar style */
-	border-bottom: 2px solid #4eb980;
-	display: inline-block;
-	padding-bottom: 0.5em;
+	color: #4eb980;
+	margin: 0 0 0.6em;
+	padding-bottom: 0.45em;
+	border-bottom: 1px solid rgba(78, 185, 128, 0.18);
 }
 
-.tech-items p {
-	font-size: 1em;
+.side-block > p {
+	font-size: 0.92em;
+	color: #5d685f;
+	margin: 0;
+}
+
+.skill {
+	margin-top: 0.85em;
+}
+
+.skill:first-of-type {
+	margin-top: 0;
+}
+
+.skill h3 {
+	font-size: 0.82em;
+	font-weight: 700;
+	color: #38453d;
+	margin: 0 0 0.15em;
+}
+
+.skill p {
+	font-size: 0.85em;
+	color: #6b756d;
+	margin: 0;
 	line-height: 1.5;
-	margin: 0.75em 0;
-	color: #666;
 }
 
-.tech-items p strong {
+/* --- Main column --- */
+.main {
+	min-width: 0;
+}
+
+.block {
+	margin-bottom: 1.75em;
+}
+
+.section-title {
+	font-size: 1.3em;
+	font-weight: 700;
+	color: #2f3a33;
+	margin: 0 0 0.9em;
+	padding-left: 0.6em;
+	border-left: 4px solid #4eb980;
+	line-height: 1.1;
+}
+
+/* Experience cards */
+.exp {
+	padding: 1.4em 1.5em;
+	margin-bottom: 1.1em;
+}
+
+.exp:last-child {
+	margin-bottom: 0;
+}
+
+.exp-head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.2em 1em;
+}
+
+.exp-head h3 {
+	font-size: 1.08em;
+	font-weight: 700;
+	color: #2f3a33;
+	margin: 0;
+}
+
+.exp .date {
+	font-size: 0.82em;
+	color: #97a299;
+	white-space: nowrap;
+}
+
+.exp .org {
+	color: #4eb980;
+	font-weight: 600;
+	font-size: 0.9em;
+	margin: 0.25em 0 0;
+}
+
+.exp ul {
+	margin: 0.8em 0 0;
+	padding-left: 1.15em;
+}
+
+.exp ul li {
+	font-size: 0.9em;
+	color: #5d685f;
+	line-height: 1.5;
+	margin-bottom: 0.45em;
+}
+
+.exp ul li:last-child {
+	margin-bottom: 0;
+}
+
+/* Projects grid */
+.project-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.1em;
+}
+
+.project {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 12px 28px rgba(40, 86, 61, 0.12);
+}
+
+.project .thumb {
+	height: 132px;
+	overflow: hidden;
+	background: #eef5f0;
+	border-bottom: 1px solid rgba(78, 185, 128, 0.14);
+}
+
+.project .thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.project-body {
+	padding: 1em 1.15em 1.15em;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.project-body h3 {
+	font-size: 1em;
+	font-weight: 700;
+	color: #2f3a33;
+	margin: 0 0 0.4em;
+	line-height: 1.25;
+}
+
+.project-body h3 a {
+	color: #2f3a33;
+	border-bottom: none;
+}
+
+.project-body h3 a:hover {
 	color: #4eb980;
 }
 
+.project-body p {
+	font-size: 0.86em;
+	color: #5d685f;
+	line-height: 1.5;
+	margin: 0;
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4em;
+	list-style: none;
+	margin: 0.85em 0 0;
+	padding: 0;
+}
+
+.tags li {
+	font-size: 0.72em;
+	font-weight: 600;
+	color: #3da06d;
+	background: #eef8f1;
+	border-radius: 999px;
+	padding: 0.25em 0.7em;
+}
+
+/* Footer */
+.footer {
+	text-align: center;
+	color: #7c887f;
+	font-size: 0.82em;
+	margin-top: 0.5em;
+	padding: 1em 0 0;
+}
+
+.footer a {
+	color: #4eb980;
+	border-bottom: none;
+}
+
+/* Responsive: collapse to single column */
+@media screen and (max-width: 900px) {
+	.page {
+		grid-template-columns: 1fr;
+		gap: 1.5em;
+	}
+
+	.sidebar {
+		position: static;
+		top: auto;
+	}
+}
+
+@media screen and (max-width: 560px) {
+	.project-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.exp-head .date {
+		width: 100%;
+	}
+}
+
+/* ==========================================================================
+   Original Directive template styles below (unused by the new layout)
+   ========================================================================== */
 
 #header {
 	background-attachment: scroll, scroll, fixed;
@@ -2895,12 +3208,6 @@ input[type="button"].small,
 	background-size: 3200px 460px, auto, cover;
 	color: rgba(255, 255, 255, 0.8);
 	padding: 10em 0 20em 0;
-	position: relative;
-	text-align: center;
-}
-
-#techs {
-
 	position: relative;
 	text-align: center;
 }
