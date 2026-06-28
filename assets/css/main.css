@@ -2851,15 +2851,20 @@ input[type="button"].small,
 #tech-section {
 	margin: 3em auto;
 	max-width: 800px;
+	text-align: center;
+}
+
+.tech-items {
+	text-align: left;
 }
 
 .face-icon {
-	color: #4eb980;
-	/* Set icon color */
 	display: block;
-	/* Make the icon a block element */
+	width: 8em;
+	height: 8em;
+	object-fit: cover;
+	border-radius: 50%;
 	margin: 0 auto 1em auto;
-	/* Center the icon and add bottom margin */
 }
 
 #tech-section h2 {
@@ -2886,6 +2891,74 @@ input[type="button"].small,
 	color: #4eb980;
 }
 
+/* Experience Section Styles */
+#experience-section {
+	margin: 3em auto;
+	max-width: 800px;
+	text-align: center;
+}
+
+#experience-section h2 {
+	font-size: 1.75em;
+	margin-bottom: 1em;
+	font-weight: 700;
+	color: #333;
+	text-transform: uppercase;
+	border-bottom: 2px solid #4eb980;
+	display: inline-block;
+	padding-bottom: 0.5em;
+}
+
+.experience-items {
+	text-align: left;
+}
+
+.experience-item {
+	border-left: 2px solid #4eb980;
+	padding: 0 0 0 1.5em;
+	margin: 0 0 2.5em 0;
+}
+
+.experience-item:last-child {
+	margin-bottom: 0;
+}
+
+.experience-head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.25em 1em;
+	margin-bottom: 0.35em;
+}
+
+.experience-item h3 {
+	margin: 0;
+	color: #333;
+}
+
+.experience-date {
+	color: #888;
+	font-size: 0.9em;
+	white-space: nowrap;
+}
+
+.experience-org {
+	color: #4eb980;
+	font-weight: 600;
+	margin-bottom: 0.75em;
+}
+
+.experience-item ul {
+	margin: 0;
+	padding-left: 1.25em;
+}
+
+.experience-item ul li {
+	color: #666;
+	line-height: 1.55;
+	margin-bottom: 0.5em;
+}
 
 #header {
 	background-attachment: scroll, scroll, fixed;
@@ -2895,12 +2968,6 @@ input[type="button"].small,
 	background-size: 3200px 460px, auto, cover;
 	color: rgba(255, 255, 255, 0.8);
 	padding: 10em 0 20em 0;
-	position: relative;
-	text-align: center;
-}
-
-#techs {
-
 	position: relative;
 	text-align: center;
 }
